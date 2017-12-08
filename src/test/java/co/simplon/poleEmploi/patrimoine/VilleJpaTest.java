@@ -16,7 +16,7 @@ public class VilleJpaTest {
 	public void la_ville_d_identifiant_25925_doit_etre_Forstfeld() {
 		// GIVEN
 		Long idRecherche = 25925L;
-
+		
 		// WHEN
 		EntityManagerFactory emf = Persistence
 				.createEntityManagerFactory("BasePatrimoine");
@@ -26,5 +26,8 @@ public class VilleJpaTest {
 		// THEN
 		assertEquals(idRecherche, ville.getId());
 		assertEquals("Forstfeld", ville.getNom());
+		assertEquals(48.85,ville.getLatitude(),0);
+		assertEquals(8.033333, ville.getLongitude(),0);
+	
 	}
 }
